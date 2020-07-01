@@ -43,6 +43,22 @@
                 </select>
             </div>
             <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" formControlName="address" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address.errors }" />
+                <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+                    <div *ngIf="f.address.errors.required"> is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact No.</label>
+                <input type="text" formControlName="contact" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.contact.errors }" />
+                <div *ngIf="submitted && f.contact.errors" class="invalid-feedback">
+                    <div *ngIf="f.contact.errors.required"> is required</div>
+                    <div *ngIf = "f.contact.errors.minlength"> Contact Number invalid </div>
+                </div>
+            </div>
+
+            <div class="form-group">
                 <button [disabled]="loading" class="btn btn-primary">
                     <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
                     Register

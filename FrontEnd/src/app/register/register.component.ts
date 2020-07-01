@@ -25,7 +25,11 @@ export class RegisterComponent implements OnInit {
             lastName: ['', Validators.required],
             email: ['', Validators.required],
             password: ['', [Validators.required, Validators.minLength(6)]],
-            profileType: ['', [Validators.required]]
+            profileType: ['', [Validators.required]],
+            address: ['', [Validators.required]],
+            contact: ['', [Validators.required, Validators.minLength(9)]],
+            country: ['', [Validators.required]],
+            city: ['', [Validators.required]],
         });
     }
 
@@ -41,7 +45,7 @@ export class RegisterComponent implements OnInit {
             return;
         }
         console.log(console.log(this.form.value))
-
+        
         // this.loading = true;
     }
 
