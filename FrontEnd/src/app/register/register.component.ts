@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+// import { Router, ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -26,8 +26,6 @@ export class RegisterComponent implements OnInit {
 
     constructor(
         private formBuilder: FormBuilder,
-        private route: ActivatedRoute,
-        private router: Router,
     ) { }
 
     ngOnInit() {
