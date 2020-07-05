@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -26,6 +27,7 @@ export class RegisterComponent implements OnInit {
 
     constructor(
         private formBuilder: FormBuilder,
+        private http: HttpClient
     ) { }
 
     ngOnInit() {
@@ -62,7 +64,18 @@ export class RegisterComponent implements OnInit {
             return;
         }
         else {
-            console.log(console.log(this.form.value))
+            console.log(this.form.value)
+
+            this.http.post<any>('url', {
+                email: this.form.value.email,
+                password: this.form.value.password,
+                name: this.form.value.firstName + this.form.value.lastName,
+                category: this.form.value.category,
+                profileType: this.form.value.profileType
+            }).subscribe({
+                next: data => console.log(data),
+                error: error => console.error(error, "Error during register")
+            });
 
         }
         

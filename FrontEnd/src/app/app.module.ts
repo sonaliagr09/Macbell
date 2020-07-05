@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UserModelComponent } from './user-model/user-model.component';
 import { LoginComponent } from './user-model/login.component';
 import { ProfileComponent } from './user-model/profile.component';
+import { CompleteProfileComponent } from './user-model/complete-profile.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProfileComponent } from './user-model/profile.component';
     HomeComponent,
     UserModelComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    CompleteProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,8 @@ import { ProfileComponent } from './user-model/profile.component';
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

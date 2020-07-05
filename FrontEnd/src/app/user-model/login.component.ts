@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -13,8 +13,11 @@ export class LoginComponent implements OnInit {
     loading = false;
     submitted = false;
 
+
+
   constructor( 
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private http: HttpClient
   ) { }
 
   ngOnInit(): void {
@@ -35,7 +38,19 @@ export class LoginComponent implements OnInit {
     else {
         console.log(this.form.value)
         /* Authentication from backend to be done here */
-        
+        interface Login {
+          email: string;
+          password: string;
+        }
+
+        this.http.post<Login>('url', {
+          email: this.form.value.email,
+          password: this.form.value.password
+        }).subscribe({
+            next: data => console.log(data),
+            error: error => console.error(error, "Error during login")
+            });
+
         /* Get User details from backend */
 
     }

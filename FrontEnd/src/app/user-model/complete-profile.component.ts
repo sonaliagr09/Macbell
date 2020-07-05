@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  templateUrl: './profile.component.html',
+  templateUrl: './complete-profile.component.html',
   styleUrls: ['./user-model.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class CompleteProfileComponent implements OnInit {
 
     name = 'abc xyz';
     mobile = "2385075847";
@@ -25,7 +25,7 @@ export class ProfileComponent implements OnInit {
 
   onSubmit() {
     console.log("Update Profile");
-    this.router.navigate(['/updateProfile']);
+    // this.router.navigate(["/updateProfile"]);
   }
 
 }
