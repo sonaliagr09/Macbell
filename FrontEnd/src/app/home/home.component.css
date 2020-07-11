@@ -1,27 +1,24 @@
-.hoverable:hover{
+header img {
+    height: 70vh;
+}
+footer .hoverable:hover{
     background-color: lightgray;
 }
-.card-hover{
+footer .card-hover{
     padding: 50px;
-    box-shadow: 20px 20px 20px 20px rgba(0, 0, 0, 0.3);
     background-color: darkcyan;
     color: white;
-    font-family: Apple Chancery, cursive;
 }
-/* .card-hover:hover{
-    background-color: lightsteelblue;
-} */
-
-.textalign{
-    text-align: right;
+footer .textalign{
+    text-align: left;
 }
-.tag{
+footer .tag{
     background-color: darkgray;
     padding: 3px;
     border: 1px solid gray;
    margin-right: 3px;
 }
-i{
+footer i{
     padding-right: 20px;
     font-size: 30px;
     color: white;
