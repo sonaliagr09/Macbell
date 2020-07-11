@@ -1,3 +1,6 @@
+.font-type{
+    font-family: Apple Chancery, cursive;
+}
 .hoverable:hover{
     background-color: lightgray;
 }
@@ -7,6 +10,8 @@
     background-color: darkcyan;
     color: white;
     font-family: Apple Chancery, cursive;
+    posfont-fition: relative;
+    top: 110px;
 }
 /* .card-hover:hover{
     background-color: lightsteelblue;
@@ -15,14 +20,21 @@
 .textalign{
     text-align: right;
 }
-.tag{
-    background-color: darkgray;
-    padding: 3px;
-    border: 1px solid gray;
-   margin-right: 3px;
+.text-align-right{
+    position: relative;
+    left: 50px;
+    top: 10px;
+    color: grey;
+    
 }
+
 i{
     padding-right: 20px;
     font-size: 30px;
     color: white;
+}
+.img-round{
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
 }
