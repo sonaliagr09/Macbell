@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { first } from 'rxjs/operators';
+// import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
-import { AuthenticationService } from '../_services/authentication.service';
+import { AuthService } from '../_services/authentication.service';
 
 
 @Component({
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   constructor( 
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private authenticationService: AuthenticationService,
+    private authenticationService: AuthService,
     private router: Router
   ) { }
 
@@ -44,16 +44,8 @@ export class LoginComponent implements OnInit {
     else {
         console.log(this.form.value)
         /* Authentication from backend to be done here */
-        this.authenticationService.login(this.form.value.email, this.form.value.password)
-          .pipe(first())
-          .subscribe(
-            data => {
-              this.router.navigate(['/profile']);
-            },
-            error => {
-              this.loading = false;
-            }
-          )
+        this.authenticationService.login(this.form.value.email, this.form.value.password);
+        
         // interface Login {
         //   email: string;
         //   password: string;
