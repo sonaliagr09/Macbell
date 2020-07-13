@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>categories</title>
+  </head>
+  <body>
+    <form  action="{% url 'categories' %}" method="POST">
+      {% csrf_token %}
+      <input type="text"  placeholder="Company name" name="company_name"><br>
+      <input type="text"  placeholder="Company email" name="company_email"><br>
+      <input type="text"  placeholder="Website" name="website"><br>
+      <input type="text"  placeholder="Company address" name="company_address"><br>
+      <input type="text"  placeholder="City" name="city"><br>
+      <select name="industry">
+        <option selected="selected">Select option</option>
+        <option value="Education">Education</option>
+        <option value="IT">IT</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Manufacturing">Manufacturing</option>
+        <option value="Health care">Health care</option>
+        <option value="finance">finance</option>
+      </select><br>
+      <select name="business">
+        <option selected="selected">Select option</option>
+        <option value="enterprise">enterprise</option>
+        <option value="collaborator">collaborator</option>
+        <option value="investor">investor</option>
+      </select><br>
+
+      <input type="text"  placeholder="Company" name="company"><br>
+      <input type="Submit" >
+
+    </form>
+  </body>
+</html>
